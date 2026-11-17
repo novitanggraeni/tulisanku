@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jejak Sejarah - Ular Tangga Orde Baru</title>
+    <link rel="stylesheet" href="ulang tangga.css">
+    <script src="ulang tangga.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">JEJAK SEJARAH</div>
+    <p>PERMAINAN EDUKASI SEJARAH INDONESIA</p>
+</header>
+
+<main>
+
+    <!-- HALAMAN PEMBUKA -->
+    <section class="opening">
+        <div class="opening-content">
+            <span>MEDIA PEMBELAJARAN SEJARAH</span>
+            <h1>JEJAK SEJARAH</h1>
+            <h2>Ular Tangga Orde Baru</h2>
+
+            <p>
+                Jelajahi perjalanan sejarah Indonesia melalui permainan
+                ular tangga yang seru dan menantang. Lempar dadu,
+                jawab pertanyaan, naiki tangga, dan hindari ular!
+            </p>
+
+            <div class="opening-info">
+                <div>
+                    <strong>100</strong>
+                    <small>Kotak Permainan</small>
+                </div>
+                <div>
+                    <strong>25</strong>
+                    <small>Pertanyaan Sejarah</small>
+                </div>
+                <div>
+                    <strong>2</strong>
+                    <small>Pemain</small>
+                </div>
+            </div>
+
+            <button class="start-button" id="startButton">
+                MULAI PERMAINAN →
+            </button>
+
+            <small class="opening-note">
+                Belajar sejarah menjadi lebih menyenangkan!
+            </small>
+        </div>
+    </section>
+
+    <!-- INTRO PERMAINAN -->
+    <section class="intro" id="gameSection">
+        <span>BELAJAR SAMBIL BERMAIN</span>
+        <h1>Ular Tangga Orde Baru</h1>
+        <p>
+            Lempar dadu, jawab pertanyaan, naiki tangga,
+            dan hindari ular. Jadilah pemain pertama yang
+            mencapai kotak 100!
+        </p>
+    </section>
+
+    <!-- AREA PERMAINAN -->
+    <section class="game-container">
+
+        <div class="board-wrapper">
+            <div class="board" id="board">
+
+                <!-- MASKOT CEWEK: PEMAIN 1 -->
+                <div class="pawn pawn-one" id="pawn0">
+                    <span class="pawn-hair"></span>
+                    <span class="pawn-head"></span>
+                    <span class="pawn-body"></span>
+                    <span class="pawn-arm left"></span>
+                    <span class="pawn-arm right"></span>
+                    <span class="pawn-leg left"></span>
+                    <span class="pawn-leg right"></span>
+                    <span class="pawn-number">1</span>
+                </div>
+
+                <!-- MASKOT COWOK: PEMAIN 2 -->
+                <div class="pawn pawn-two" id="pawn1">
+                    <span class="pawn-hair"></span>
+                    <span class="pawn-head"></span>
+                    <span class="pawn-body"></span>
+                    <span class="pawn-arm left"></span>
+                    <span class="pawn-arm right"></span>
+                    <span class="pawn-leg left"></span>
+                    <span class="pawn-leg right"></span>
+                    <span class="pawn-number">2</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PANEL PERMAINAN -->
+        <div class="panel">
+
+            <h2>Area Permainan</h2>
+
+            <div class="player-card active" id="card0">
+                <div class="avatar red">P1</div>
+                <div>
+                    <strong>Pemain 1</strong>
+                    <p>Posisi: <b id="position0">1</b></p>
+                </div>
+                <div class="score">
+                    <strong id="score0">0</strong>
+                    <small>Poin</small>
+                </div>
+            </div>
+
+            <div class="player-card" id="card1">
+                <div class="avatar blue">P2</div>
+                <div>
+                    <strong>Pemain 2</strong>
+                    <p>Posisi: <b id="position1">1</b></p>
+                </div>
+                <div class="score">
+                    <strong id="score1">0</strong>
+                    <small>Poin</small>
+                </div>
+            </div>
+
+            <div class="turn-box">
+
+                <small>GILIRAN SEKARANG</small>
+                <h2 id="turnText">Pemain 1</h2>
+
+                <div class="dice-area">
+                    <div class="dice" id="dice">⚄</div>
+                    <button id="rollButton">LEMPAR DADU</button>
+                </div>
+
+                <p id="message">
+                    Pemain 1, lempar dadu untuk memulai!
+                </p>
+
+            </div>
+
+            <div class="legend">
+                <p>🪜 Tangga = naik</p>
+                <p>🐍 Ular = turun</p>
+                <p>❔ Kotak kuis = jawab pertanyaan</p>
+                <p>✅ Benar = +10 poin</p>
+                <p>❌ Salah = -10 poin</p>
+            </div>
+
+            <button class="reset" id="resetButton">
+                ↻ Mulai Ulang
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- CARA BERMAIN -->
+    <section class="rules">
+
+        <h2>Cara Bermain</h2>
+
+        <p>1. Permainan dimainkan oleh dua orang secara bergantian.</p>
+        <p>2. Pemain melempar dadu untuk menentukan jumlah langkah.</p>
+        <p>3. Jika berhenti tepat di pangkal tangga, pemain akan naik.</p>
+        <p>4. Jika berhenti tepat di kepala ular, pemain akan turun.</p>
+        <p>5. Jika berhenti di kotak kuis, pemain wajib menjawab pertanyaan.</p>
+        <p>6. Jawaban benar mendapatkan 10 poin, jawaban salah dikurangi 10 poin.</p>
+        <p>7. Pemain pertama yang mencapai kotak 100 menjadi pemenang.</p>
+
+    </section>
+
+</main>
+
+<!-- MODAL PERTANYAAN -->
+<div class="modal hidden" id="questionModal">
+
+    <div class="modal-card">
+
+        <span>KUIS SEJARAH ORDE BARU</span>
+
+        <small id="questionCount">SOAL 1/25</small>
+
+        <h2 id="questionText">
+            Pertanyaan akan muncul di sini
+        </h2>
+
+        <div id="answerList"></div>
+
+        <p id="answerFeedback"></p>
+
+    </div>
+
+</div>
+
+<!-- MODAL PEMENANG -->
+<div class="modal hidden" id="winnerModal">
+
+    <div class="modal-card winner">
+
+        <h1>🏆</h1>
+
+        <h2 id="winnerText">Pemain Menang!</h2>
+
+        <p id="winnerDescription"></p>
+
+        <button id="playAgainButton">
+            MAIN LAGI
+        </button>
+
+    </div>
+
+</div>
+
+<footer>
+    JEJAK SEJARAH • MEDIA PEMBELAJARAN SEJARAH
+</footer>
+
+</body>
+</html>
